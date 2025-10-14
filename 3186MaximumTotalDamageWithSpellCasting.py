@@ -2,7 +2,8 @@
 
 A magician has various spells.
 
-You are given an array power, where each element represents the damage of a spell. Multiple spells can have the same damage value.
+You are given an array power, where each element represents the damage 
+of a spell. Multiple spells can have the same damage value.
 
 It is a known fact that if a magician decides to cast a spell with a damage of power[i], they cannot cast any spell with a damage of power[i] - 2, power[i] - 1, power[i] + 1, or power[i] + 2.
 
