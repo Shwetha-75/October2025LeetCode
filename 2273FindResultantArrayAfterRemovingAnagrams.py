@@ -1,7 +1,7 @@
 '''
 
 You are given a 0-indexed string array words, where words[i] 
-consists of lowercase English letters.
+ consists of lowercase English letters.
 
 In one operation, select any index i 
 such that 0 < i < words.length and words[i - 1] and words[i] are anagrams, 
