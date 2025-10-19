@@ -45,7 +45,7 @@ class Solution:
     def findSmallestInteger(self, nums: list[int], value: int) -> int:
         remainders=defaultdict(int)
         for num in nums:
-            remainders[abs(num)%value]+=1
+            remainders[num%value]+=1
         mex=0
         while True:
               if mex%value not in remainders or not remainders[mex%value]:
@@ -63,7 +63,9 @@ class TestApp:
     def testCaseThree(self):
         assert Solution().findSmallestInteger([3,0,3,2,4,2,1,1,0,4],5)==10
     def testCaseFour(self):
-        assert Solution().findSmallestInteger([1,5,6,7,8,11,-10],8)==4
+        assert Solution().findSmallestInteger([1,5,6,7,8,11,-10],8)==2
     def testCaseFive(self):
         assert Solution().findSmallestInteger([1,1,5,5,8,2,2,5],3)==0
+    def testCaseSix(self):
+        assert Solution().findSmallestInteger([0,-3],4)==2
     
