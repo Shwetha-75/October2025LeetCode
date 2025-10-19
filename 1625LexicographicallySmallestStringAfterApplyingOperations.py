@@ -10,8 +10,6 @@ Return the lexicographically smallest string you can obtain by applying the abov
 
 A string a is lexicographically smaller than a string b (of the same length) if in the first position where a and b differ, string a has a letter that appears earlier in the alphabet than the corresponding letter in b. For example, "0158" is lexicographically smaller than "0190" because the first position they differ is at the third letter, and '5' comes before '9'.
 
- 
-
 Example 1:
 
 Input: s = "5525", a = 9, b = 2
