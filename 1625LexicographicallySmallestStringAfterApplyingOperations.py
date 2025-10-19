@@ -52,6 +52,9 @@ s consists of digits from 0 to 9 only.
 
 '''
 
+# DFS
+
+# Iterative 
 class Solution:
     def findLexSmallestString(self, s: str, a: int, b: int) -> str:
         s=list(s)
@@ -100,9 +103,57 @@ class Solution:
         while left<=right:
             s[left],s[right]=s[right],s[left]
             left+=1
+            right-=1 
+
+# Recursive Approach 
+class Solution:
+    def __init__(self):
+        self.smallestStr=""
+    def findLexSmallestString(self, s: str, a: int, b: int) -> str:
+        visited={}
+        self.smallestStr=s[::]
+        s=list(s)
+        self.helper(s,a,b,visited)
+        return self.smallestStr
+    def helper(self,s:list[str],a:int,b:int,visited:dict):
+        if "".join(s) in visited:
+            return 
+        visited["".join(s)]=True 
+        temp="".join(s)
+        if temp<self.smallestStr:
+            self.smallestStr=temp
+        # rotate 
+        rotate=s[::]
+        char=s[::]
+        self.rotateArray(rotate,b)
+        for i in range(1,len(s),2):
+            char[i]=str((int(char[i])+a)%10)
+        self.helper(rotate,a,b,visited)
+        self.helper(char,a,b,visited)
+        
+    def rotateArray(self,s:list[str],k:int):
+        # reverse 
+        left,right=0,len(s)-1
+        while left<=right:
+              s[left],s[right]=s[right],s[left]
+              left+=1
+              right-=1
+        # reverse 0,k-1
+        left,right=0,k-1
+        while left<=right:
+            s[left],s[right]=s[right],s[left]
+            left+=1
             right-=1
+        # reverse k,n-1
+        left,right=k,len(s)-1
+        while left<=right:
+            s[left],s[right]=s[right],s[left]
+            left+=1
+            right-=1
+    
 
 class TestApp:
+    
     
     def testCaseOne(self):
         assert Solution().findLexSmallestString("5525",9,2)=="2050"
