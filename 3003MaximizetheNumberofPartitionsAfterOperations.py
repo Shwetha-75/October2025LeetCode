@@ -46,9 +46,7 @@ Input: s = "xxyz", k = 1
 Output: 4
 
 Explanation:
-
 The optimal way is to change s[0] or s[1] to something other than characters in s, for example, to change s[0] to w.
-
 Then s becomes "wxyz", which consists of 4 distinct characters, so as k is 1, it will divide into 4 partitions.
 
 
